@@ -374,7 +374,7 @@ function ParentSetup({ onStartGame, history, onViewHistory, profile, onProfileCh
   };
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-3 sm:p-4 overflow-auto">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-3 sm:p-4 pb-8 overflow-auto">
       <Toast message={toastMsg} trigger={toastKey} />
       <div className="max-w-lg mx-auto">
         {/* Header */}
@@ -962,6 +962,10 @@ export default function App() {
       {screen === "game" && <SpellingGame words={gameWords} onFinish={finishGame} onBack={() => setScreen("setup")} profile={profile} />}
       {screen === "results" && gameResult && <ResultsScreen data={gameResult} onBack={() => setScreen("setup")} onPlayAgain={() => setScreen("game")} />}
       {screen === "history" && <HistoryScreen history={history} onBack={() => setScreen("setup")} />}
+      <footer className="fixed bottom-0 left-0 right-0 text-center py-1.5 text-[10px] sm:text-xs text-gray-400 bg-white/30 backdrop-blur-sm pointer-events-auto z-10">
+        <span>&copy; {new Date().getFullYear()} Sim Vattanac &middot; </span>
+        <a href="mailto:vattanacsim99@gmail.com" className="underline hover:text-purple-500 transition-colors">vattanacsim99@gmail.com</a>
+      </footer>
     </>
   );
 }
