@@ -27,25 +27,138 @@ function shuffle(arr) {
 
 // ===== EMOJI MAP =====
 const EMOJI_MAP = {
+  // Animals
   DOG:"🐶",CAT:"🐱",FROG:"🐸",FISH:"🐟",BEAR:"🐻",LION:"🦁",PIG:"🐷",COW:"🐮",
   FOX:"🦊",BEE:"🐝",DUCK:"🦆",HEN:"🐔",OWL:"🦉",BAT:"🦇",ANT:"🐜",BUG:"🐛",
   RAM:"🐏",YAK:"🐃",HORSE:"🐴",SHEEP:"🐑",BUNNY:"🐰",MOUSE:"🐭",SNAKE:"🐍",
   WHALE:"🐋",TIGER:"🐯",PANDA:"🐼",KOALA:"🐨",ZEBRA:"🦓",MONKEY:"🐵",TURTLE:"🐢",
   PENGUIN:"🐧",DOLPHIN:"🐬",OCTOPUS:"🐙",CHICKEN:"🐔",ELEPHANT:"🐘",GIRAFFE:"🦒",
-  BUTTERFLY:"🦋",APPLE:"🍎",BANANA:"🍌",GRAPE:"🍇",MANGO:"🥭",LEMON:"🍋",
-  ORANGE:"🍊",CHERRY:"🍒",PEACH:"🍑",MELON:"🍈",BERRY:"🫐",STAR:"⭐",MOON:"🌙",
-  SUN:"☀️",TREE:"🌳",FLOWER:"🌸",RAIN:"🌧️",SNOW:"❄️",FIRE:"🔥",HEART:"❤️",
-  BOOK:"📖",CAKE:"🎂",PIZZA:"🍕",CANDY:"🍬",BREAD:"🍞",CORN:"🌽",HOUSE:"🏠",
-  BOAT:"⛵",PLANE:"✈️",TRAIN:"🚂",CAR:"🚗",BALL:"⚽",KITE:"🪁",DRUM:"🥁",
-  BELL:"🔔",RING:"💍",KING:"👑",BABY:"👶",HAND:"✋",FOOT:"🦶",NOSE:"👃",
-  EYE:"👁️",EAR:"👂",HAT:"🎩",SHOE:"👟",SOCK:"🧦",BIRD:"🐦",DEER:"🦌",
-  GOAT:"🐐",CRAB:"🦀",WOLF:"🐺",SWAN:"🦢",
+  BUTTERFLY:"🦋",BIRD:"🐦",DEER:"🦌",GOAT:"🐐",CRAB:"🦀",WOLF:"🐺",SWAN:"🦢",
+  SHARK:"🦈",SNAIL:"🐌",WORM:"🪱",FLY:"🪰",SQUID:"🦑",SHRIMP:"🦐",SEAL:"🦭",
+  HIPPO:"🦛",RHINO:"🦏",CAMEL:"🐫",LLAMA:"🦙",PARROT:"🦜",EAGLE:"🦅",FLAMINGO:"🦩",
+  PUPPY:"🐶",KITTY:"🐱",CHICK:"🐣",
+  // Fruits & Food
+  APPLE:"🍎",BANANA:"🍌",GRAPE:"🍇",MANGO:"🥭",LEMON:"🍋",ORANGE:"🍊",CHERRY:"🍒",
+  PEACH:"🍑",MELON:"🍈",BERRY:"🫐",CAKE:"🎂",PIZZA:"🍕",CANDY:"🍬",BREAD:"🍞",
+  CORN:"🌽",RICE:"🍚",PASTA:"🍝",TACO:"🌮",SOUP:"🍲",MILK:"🥛",JUICE:"🧃",
+  WATER:"💧",COOKIE:"🍪",DONUT:"🍩",PIE:"🥧",SALAD:"🥗",EGG:"🥚",CHEESE:"🧀",
+  MEAT:"🍖",FRIES:"🍟",TOAST:"🍞",JAM:"🫙",HONEY:"🍯",NUT:"🥜",PEAR:"🍐",
+  PLUM:"🫐",FIG:"🫒",DATE:"🌴",LIME:"🍋",KIWI:"🥝",COCONUT:"🥥",
+  // Nature
+  STAR:"⭐",MOON:"🌙",SUN:"☀️",TREE:"🌳",FLOWER:"🌸",RAIN:"🌧️",SNOW:"❄️",
+  FIRE:"🔥",HEART:"❤️",CLOUD:"☁️",WIND:"💨",LEAF:"🍃",SEED:"🌱",ROSE:"🌹",
+  ROCK:"🪨",WAVE:"🌊",LAKE:"🏞️",RIVER:"🏞️",OCEAN:"🌊",HILL:"⛰️",MOUNTAIN:"🏔️",
+  SAND:"🏖️",GRASS:"🌿",EARTH:"🌍",SKY:"🌤️",POND:"🐸",FOREST:"🌲",GARDEN:"🌻",
+  RAINBOW:"🌈",STORM:"⛈️",FOG:"🌫️",ICE:"🧊",MUD:"🟤",DIRT:"🟫",
+  // Things & Objects
+  BOOK:"📖",HOUSE:"🏠",BOAT:"⛵",PLANE:"✈️",TRAIN:"🚂",CAR:"🚗",BALL:"⚽",
+  KITE:"🪁",DRUM:"🥁",BELL:"🔔",RING:"💍",KING:"👑",HAT:"🎩",SHOE:"👟",SOCK:"🧦",
+  DOOR:"🚪",KEY:"🔑",LAMP:"💡",BED:"🛏️",CHAIR:"🪑",TABLE:"🪑",CUP:"☕",
+  BAG:"👜",BOX:"📦",PEN:"🖊️",MAP:"🗺️",FLAG:"🏁",GIFT:"🎁",CLOCK:"🕐",
+  PHONE:"📱",BIKE:"🚲",BUS:"🚌",TRUCK:"🚚",SHIP:"🚢",ROCKET:"🚀",
+  TOY:"🧸",DOLL:"🧸",ROBOT:"🤖",CROWN:"👑",SWORD:"⚔️",SHIELD:"🛡️",
+  BRUSH:"🖌️",PAINT:"🎨",MUSIC:"🎵",SONG:"🎶",GAME:"🎮",DICE:"🎲",
+  MASK:"🎭",WAND:"🪄",GEM:"💎",COIN:"🪙",BROOM:"🧹",CANDLE:"🕯️",
+  TENT:"⛺",WHEEL:"☸️",ROPE:"🪢",NAIL:"🔩",SOAP:"🧼",TOWEL:"🧻",
+  SHIRT:"👕",DRESS:"👗",PANTS:"👖",COAT:"🧥",SCARF:"🧣",BOOT:"👢",GLOVE:"🧤",
+  // Body
+  BABY:"👶",HAND:"✋",FOOT:"🦶",NOSE:"👃",EYE:"👁️",EAR:"👂",
+  HEAD:"🗣️",FACE:"😊",MOUTH:"👄",TEETH:"🦷",HAIR:"💇",BONE:"🦴",LEG:"🦵",ARM:"💪",
+  // Verbs / Actions
+  RUN:"🏃",WALK:"🚶",JUMP:"🤸",EAT:"🍽️",SWIM:"🏊",FLY:"🦅",SING:"🎤",
+  DANCE:"💃",READ:"📖",COOK:"👨‍🍳",SLEEP:"😴",PLAY:"🎮",WRITE:"✍️",DRAW:"🎨",
+  KICK:"⚽",THROW:"🤾",CATCH:"🤲",PULL:"🪝",PUSH:"👐",CLIMB:"🧗",RIDE:"🏇",
+  WAVE:"👋",CLAP:"👏",HUG:"🤗",KISS:"😘",CRY:"😢",LAUGH:"😂",SMILE:"😊",
+  THINK:"🤔",LOOK:"👀",HEAR:"👂",TALK:"🗣️",YELL:"📢",WASH:"🧼",CLEAN:"🧹",
+  BUILD:"🏗️",CUT:"✂️",DIG:"⛏️",PLANT:"🌱",GROW:"🌿",PICK:"🤏",HIDE:"🙈",
+  FIND:"🔍",OPEN:"📂",CLOSE:"📁",STOP:"🛑",GO:"🟢",SIT:"🪑",STAND:"🧍",
+  BEND:"🙇",SPIN:"🌀",SHAKE:"🫨",BLOW:"🌬️",POUR:"🫗",MIX:"🥣",BAKE:"🧁",
+  ROLL:"🎲",SLIDE:"🛝",SWING:"🎠",LIFT:"🏋️",DROP:"⬇️",FALL:"🍂",WINK:"😉",
+  HOP:"🐇",SKIP:"⏭️",SNAP:"🫰",GRAB:"✊",HOLD:"🤝",GIVE:"🎁",TAKE:"🤲",
+  HELP:"🆘",WAIT:"⏳",HURRY:"⏩",DRIVE:"🚗",SAIL:"⛵",PAINT:"🖌️",SWAY:"🌾",
+  PEEK:"👁️",ROAR:"🦁",BARK:"🐕",MEOW:"🐱",MOO:"🐄",QUACK:"🦆",BUZZ:"🐝",
+  // Adjectives
+  HAPPY:"😊",SAD:"😢",BIG:"🐘",SMALL:"🐜",HOT:"🔥",COLD:"🥶",FAST:"⚡",
+  SLOW:"🐢",TALL:"🦒",LOUD:"📢",QUIET:"🤫",SOFT:"☁️",HARD:"🪨",WET:"💧",
+  DRY:"🏜️",DARK:"🌑",LIGHT:"💡",NEW:"✨",OLD:"📜",GOOD:"👍",BAD:"👎",
+  SWEET:"🍭",SOUR:"🍋",RICH:"💰",POOR:"😿",CLEAN:"✨",DIRTY:"🟤",BRAVE:"🦸",
+  SHY:"🫣",WISE:"🦉",WILD:"🐯",CALM:"😌",ANGRY:"😠",KIND:"💝",MEAN:"😈",
+  ROUND:"⭕",FLAT:"📏",SHARP:"🔪",SMOOTH:"🧈",ROUGH:"🪨",THICK:"📗",THIN:"📄",
+  FULL:"🫙",EMPTY:"📭",LONG:"📏",SHORT:"📐",WIDE:"↔️",DEEP:"🌊",
+  CUTE:"🥰",UGLY:"👹",FUNNY:"😂",SCARY:"😱",PRETTY:"🌸",TINY:"🔬",HUGE:"🏔️",
+  PINK:"🩷",RED:"🔴",BLUE:"🔵",GREEN:"🟢",GOLD:"🥇",BLACK:"⚫",WHITE:"⚪",
+  // People & Places
+  BOY:"👦",GIRL:"👧",MOM:"👩",DAD:"👨",QUEEN:"👸",PRINCE:"🤴",FAIRY:"🧚",
+  WITCH:"🧙‍♀️",GHOST:"👻",ANGEL:"👼",PIRATE:"🏴‍☠️",NINJA:"🥷",HERO:"🦸",
+  SCHOOL:"🏫",PARK:"🏞️",BEACH:"🏖️",FARM:"🌾",ZOO:"🦁",STORE:"🏪",
+  CASTLE:"🏰",CAVE:"🕳️",CAMP:"🏕️",CITY:"🏙️",TOWN:"🏘️",
+  // Time & Weather
+  DAY:"🌞",NIGHT:"🌙",DAWN:"🌅",DUSK:"🌇",SPRING:"🌸",SUMMER:"☀️",
+  WINTER:"❄️",FALL:"🍂",SUNNY:"☀️",RAINY:"🌧️",WINDY:"💨",SNOWY:"🌨️",
+  // Numbers & Concepts
+  ONE:"1️⃣",TWO:"2️⃣",THREE:"3️⃣",FOUR:"4️⃣",FIVE:"5️⃣",
+  LOVE:"❤️",LUCK:"🍀",DREAM:"💭",WISH:"🌠",MAGIC:"🪄",PARTY:"🎉",
 };
 const getEmoji = (w) => EMOJI_MAP[w] || "📝";
 
 // ===== AI IMAGE COMPONENT =====
 // Uses Pollinations.ai (free, no API key) to generate kid-friendly images for ANY word
+// Includes queue to avoid rate limits (free tier allows 1 concurrent request)
 const imageCache = {};
+const failedImages = new Set(); // Don't retry words that already failed
+let imageQueue = [];
+let isLoadingImage = false;
+
+function processImageQueue() {
+  if (isLoadingImage || imageQueue.length === 0) return;
+  isLoadingImage = true;
+  const { word, resolve } = imageQueue.shift();
+
+  if (imageCache[word]) { isLoadingImage = false; resolve(imageCache[word]); processImageQueue(); return; }
+  if (failedImages.has(word)) { isLoadingImage = false; resolve(null); processImageQueue(); return; }
+
+  const prompt = encodeURIComponent(
+    `cute cartoon illustration of "${word.toLowerCase()}" for children, colorful, simple, friendly, white background, no text, kid-friendly`
+  );
+  const url = `https://image.pollinations.ai/prompt/${prompt}?width=256&height=256&nologo=true&seed=${word.length * 7}`;
+
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  let retries = 0;
+  const tryLoad = () => {
+    img.onload = () => {
+      imageCache[word] = url;
+      isLoadingImage = false;
+      resolve(url);
+      // Small delay between requests to be polite to free API
+      setTimeout(processImageQueue, 500);
+    };
+    img.onerror = () => {
+      retries++;
+      if (retries < 2) {
+        // Retry after delay (rate limit)
+        setTimeout(() => { img.src = url + `&retry=${retries}`; tryLoad(); }, 3000);
+      } else {
+        failedImages.add(word);
+        isLoadingImage = false;
+        resolve(null);
+        setTimeout(processImageQueue, 1000);
+      }
+    };
+    img.src = retries === 0 ? url : url + `&retry=${retries}`;
+  };
+  tryLoad();
+}
+
+function loadWordImage(word) {
+  return new Promise((resolve) => {
+    if (imageCache[word]) { resolve(imageCache[word]); return; }
+    if (failedImages.has(word)) { resolve(null); return; }
+    imageQueue.push({ word, resolve });
+    processImageQueue();
+  });
+}
+
 function WordImage({ word, size = "lg" }) {
   const [imgSrc, setImgSrc] = useState(null);
   const [loaded, setLoaded] = useState(false);
@@ -62,20 +175,13 @@ function WordImage({ word, size = "lg" }) {
       return;
     }
 
-    const prompt = encodeURIComponent(
-      `cute cartoon illustration of "${word.toLowerCase()}" for children, colorful, simple, friendly, white background, no text, kid-friendly`
-    );
-    const url = `https://image.pollinations.ai/prompt/${prompt}?width=256&height=256&nologo=true&seed=${word.length}`;
-
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => {
-      imageCache[word] = url;
-      setImgSrc(url);
-      setLoaded(true);
-    };
-    img.onerror = () => setError(true);
-    img.src = url;
+    let cancelled = false;
+    loadWordImage(word).then((url) => {
+      if (cancelled) return;
+      if (url) { setImgSrc(url); setLoaded(true); }
+      else setError(true);
+    });
+    return () => { cancelled = true; };
   }, [word]);
 
   const emoji = getEmoji(word);
@@ -570,7 +676,7 @@ function ParentSetup({ onStartGame, history, onViewHistory, profile, onProfileCh
           <div className="flex justify-between items-center mb-2">
             <h3 className="font-bold text-purple-700 text-sm">Word List ({words.length} words)</h3>
             {words.length > 0 && (
-              <button onClick={() => setWords([])} className="text-red-400 text-xs font-bold hover:text-red-600">Clear All</button>
+              <button onClick={() => setWords([])} className="bg-red-100 text-red-600 px-3 py-1.5 rounded-xl text-xs font-bold border border-red-200 hover:bg-red-500 hover:text-white hover:border-red-500 active:scale-95 transition-all shadow-sm">🗑 Clear All</button>
             )}
           </div>
           {words.length === 0 ? (
@@ -753,7 +859,7 @@ function SpellingGame({ words, onFinish, onBack, profile }) {
           {currentWord.split("").map((letter, i) => {
             const st = slotStates[i]; const isFilled = i < filled.length;
             return (
-              <div key={i} className={`w-9 h-11 sm:w-11 sm:h-14 md:w-14 md:h-16 rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold transition-all duration-200 ${
+              <div key={i} className={`w-12 h-14 sm:w-13 sm:h-15 md:w-15 md:h-17 rounded-xl flex items-center justify-center text-xl sm:text-2xl md:text-2xl font-bold transition-all duration-200 ${
                 st === "correct" ? "border-green-500 bg-green-100 text-green-700 scale-105" :
                 st === "wrong" ? "border-red-500 bg-red-100 text-red-700" :
                 isFilled ? "border-purple-500 bg-purple-100 text-purple-700 scale-105" :
@@ -766,12 +872,12 @@ function SpellingGame({ words, onFinish, onBack, profile }) {
         </div>
 
         {/* Letters */}
-        <div className="flex gap-1.5 sm:gap-2 justify-center flex-wrap max-w-[340px] sm:max-w-none">
+        <div className="flex gap-3 sm:gap-3 justify-center flex-wrap w-full px-2">
           {letterPool.map((btn, idx) => {
             const used = usedBtns.has(btn.id);
             return (
               <button key={btn.id} onClick={() => handleLetter(btn)} disabled={used}
-                className={`w-10 h-12 sm:w-11 sm:h-14 md:w-14 md:h-16 rounded-lg sm:rounded-xl font-bold text-lg sm:text-xl md:text-2xl text-white shadow-lg transition-all duration-150 bg-gradient-to-br ${LETTER_COLORS[idx % LETTER_COLORS.length]} ${
+                className={`min-w-[48px] min-h-[56px] w-14 h-16 sm:w-14 sm:h-16 md:w-16 md:h-18 rounded-2xl font-bold text-2xl sm:text-2xl md:text-3xl text-white shadow-lg transition-all duration-150 bg-gradient-to-br ${LETTER_COLORS[idx % LETTER_COLORS.length]} ${
                   used ? "opacity-25 scale-85 cursor-not-allowed" : "hover:scale-110 active:scale-90 cursor-pointer"
                 }`} style={{
                   textShadow: "1px 2px 2px rgba(0,0,0,0.2)",
