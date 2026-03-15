@@ -80,8 +80,8 @@ function WordImage({ word, size = "lg" }) {
 
   const emoji = getEmoji(word);
   const sizeClasses = size === "lg"
-    ? "w-32 h-32 md:w-40 md:h-40 text-6xl md:text-8xl"
-    : "w-12 h-12 md:w-16 md:h-16 text-2xl md:text-3xl";
+    ? "w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 text-4xl sm:text-6xl md:text-8xl"
+    : "w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-xl sm:text-2xl md:text-3xl";
 
   return (
     <div className={`${sizeClasses} rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-yellow-100 to-pink-100 shadow-inner relative`}>
@@ -374,15 +374,15 @@ function ParentSetup({ onStartGame, history, onViewHistory, profile, onProfileCh
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-4 overflow-auto">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-3 sm:p-4 overflow-auto">
       <Toast message={toastMsg} trigger={toastKey} />
       <div className="max-w-lg mx-auto">
         {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="text-center mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
             Spelling Game Setup
           </h1>
-          <p className="text-gray-500 mt-1 text-sm">Add words for your child to practice</p>
+          <p className="text-gray-500 mt-1 text-xs sm:text-sm">Add words for your child to practice</p>
         </div>
 
         {/* Profile Section */}
@@ -717,48 +717,48 @@ function SpellingGame({ words, onFinish, onBack, profile }) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-100 via-emerald-50 to-cyan-50 flex flex-col items-center relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-gradient-to-b from-green-100 via-emerald-50 to-cyan-50 flex flex-col items-center relative overflow-hidden">
       <Confetti trigger={confettiKey} />
-      <div className="w-full h-2 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500" />
+      <div className="w-full h-1.5 sm:h-2 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500" />
 
       {/* Top bar */}
-      <div className="w-full flex justify-between items-center px-4 py-2">
-        <div className="flex items-center gap-2">
-          <button onClick={onBack} className="bg-white/70 backdrop-blur rounded-full px-3 py-1 shadow font-bold text-gray-500 text-sm hover:scale-105 active:scale-95 transition-transform">🏠</button>
+      <div className="w-full flex justify-between items-center px-2 sm:px-4 py-1.5 sm:py-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button onClick={onBack} className="bg-white/70 backdrop-blur rounded-full px-2 sm:px-3 py-1 shadow font-bold text-gray-500 text-xs sm:text-sm hover:scale-105 active:scale-95 transition-transform">🏠</button>
           {profile?.kidPhoto && (
-            <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shadow">
               <img src={profile.kidPhoto} alt="" className="w-full h-full object-cover" />
             </div>
           )}
           {profile?.kidName && (
-            <span className="bg-white/70 backdrop-blur rounded-full px-2 py-0.5 shadow font-bold text-purple-600 text-xs">{profile.kidName}</span>
+            <span className="bg-white/70 backdrop-blur rounded-full px-1.5 sm:px-2 py-0.5 shadow font-bold text-purple-600 text-[10px] sm:text-xs">{profile.kidName}</span>
           )}
-          <div className="bg-white/70 backdrop-blur rounded-full px-3 py-1 shadow font-bold text-pink-600 text-sm">⭐ {score}</div>
+          <div className="bg-white/70 backdrop-blur rounded-full px-2 sm:px-3 py-1 shadow font-bold text-pink-600 text-xs sm:text-sm">⭐ {score}</div>
         </div>
-        <div className="flex gap-1 text-lg">{[0,1,2].map(i => <span key={i}>{i < lives ? "❤️" : "🤍"}</span>)}</div>
-        <div className="bg-white/70 backdrop-blur rounded-full px-3 py-1 shadow font-bold text-indigo-600 text-sm">{round + 1}/{totalRounds}</div>
+        <div className="flex gap-0.5 sm:gap-1 text-sm sm:text-lg">{[0,1,2].map(i => <span key={i}>{i < lives ? "❤️" : "🤍"}</span>)}</div>
+        <div className="bg-white/70 backdrop-blur rounded-full px-2 sm:px-3 py-1 shadow font-bold text-indigo-600 text-xs sm:text-sm">{round + 1}/{totalRounds}</div>
       </div>
 
       {/* Game */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-3 w-full max-w-md px-4 pb-4">
-        <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-4 shadow-lg w-full text-center">
+      <div className="flex-1 flex flex-col items-center justify-evenly w-full max-w-md px-3 sm:px-4 pb-3 sm:pb-4">
+        <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-2 sm:p-4 shadow-lg w-full text-center">
           <div className="mb-1 flex justify-center animate-bounce" style={{ animationDuration: "2s" }}>
             <WordImage word={currentWord} size="lg" />
           </div>
-          <button onClick={() => speakWord(currentWord)} className="text-3xl hover:scale-110 active:scale-90 transition-transform">🔊</button>
+          <button onClick={() => speakWord(currentWord)} className="text-2xl sm:text-3xl hover:scale-110 active:scale-90 transition-transform">🔊</button>
         </div>
 
         {/* Slots */}
-        <div className="flex gap-2 justify-center flex-wrap">
+        <div className="flex gap-1.5 sm:gap-2 justify-center flex-wrap">
           {currentWord.split("").map((letter, i) => {
             const st = slotStates[i]; const isFilled = i < filled.length;
             return (
-              <div key={i} className={`w-11 h-14 md:w-14 md:h-16 rounded-xl flex items-center justify-center text-xl md:text-2xl font-bold transition-all duration-200 ${
+              <div key={i} className={`w-9 h-11 sm:w-11 sm:h-14 md:w-14 md:h-16 rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold transition-all duration-200 ${
                 st === "correct" ? "border-green-500 bg-green-100 text-green-700 scale-105" :
                 st === "wrong" ? "border-red-500 bg-red-100 text-red-700" :
                 isFilled ? "border-purple-500 bg-purple-100 text-purple-700 scale-105" :
                 "border-dashed border-purple-300 bg-white/50 text-gray-300"
-              }`} style={{ borderWidth: 3 }}>
+              }`} style={{ borderWidth: 2.5 }}>
                 {isFilled ? filled[i] : st === "wrong" ? letter : ""}
               </div>
             );
@@ -766,12 +766,12 @@ function SpellingGame({ words, onFinish, onBack, profile }) {
         </div>
 
         {/* Letters */}
-        <div className="flex gap-2 justify-center flex-wrap">
+        <div className="flex gap-1.5 sm:gap-2 justify-center flex-wrap max-w-[340px] sm:max-w-none">
           {letterPool.map((btn, idx) => {
             const used = usedBtns.has(btn.id);
             return (
               <button key={btn.id} onClick={() => handleLetter(btn)} disabled={used}
-                className={`w-11 h-14 md:w-14 md:h-16 rounded-xl font-bold text-xl md:text-2xl text-white shadow-lg transition-all duration-150 bg-gradient-to-br ${LETTER_COLORS[idx % LETTER_COLORS.length]} ${
+                className={`w-10 h-12 sm:w-11 sm:h-14 md:w-14 md:h-16 rounded-lg sm:rounded-xl font-bold text-lg sm:text-xl md:text-2xl text-white shadow-lg transition-all duration-150 bg-gradient-to-br ${LETTER_COLORS[idx % LETTER_COLORS.length]} ${
                   used ? "opacity-25 scale-85 cursor-not-allowed" : "hover:scale-110 active:scale-90 cursor-pointer"
                 }`} style={{
                   textShadow: "1px 2px 2px rgba(0,0,0,0.2)",
@@ -784,14 +784,14 @@ function SpellingGame({ words, onFinish, onBack, profile }) {
         </div>
 
         <button onClick={handleUndo}
-          className="bg-white/70 backdrop-blur rounded-full px-5 py-2 font-bold text-purple-600 shadow hover:scale-105 active:scale-95 transition-transform text-sm">
+          className="bg-white/70 backdrop-blur rounded-full px-4 sm:px-5 py-1.5 sm:py-2 font-bold text-purple-600 shadow hover:scale-105 active:scale-95 transition-transform text-xs sm:text-sm">
           ↩ Undo
         </button>
       </div>
 
       {feedback && (
         <div className="fixed inset-0 flex items-center justify-center pointer-events-none" style={{ zIndex: 998 }}>
-          <div className={`text-5xl md:text-7xl font-bold ${feedback.color} ${feedback.bg} px-12 py-6 rounded-3xl shadow-xl`} style={{ animation: "popIn 0.3s ease-out" }}>
+          <div className={`text-3xl sm:text-5xl md:text-7xl font-bold ${feedback.color} ${feedback.bg} px-6 sm:px-12 py-3 sm:py-6 rounded-2xl sm:rounded-3xl shadow-xl`} style={{ animation: "popIn 0.3s ease-out" }}>
             {feedback.text}
           </div>
         </div>
@@ -819,17 +819,17 @@ function ResultsScreen({ data, onBack, onPlayAgain }) {
   const msg = pct >= 90 ? `${displayName}, Spelling Champion!` : pct >= 70 ? `Great job, ${displayName}!` : pct >= 50 ? `Good job, ${displayName}!` : `Keep practicing, ${displayName}!`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-pink-50 flex flex-col items-center justify-center p-4 overflow-auto">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-amber-50 via-orange-50 to-pink-50 flex flex-col items-center justify-center p-3 sm:p-4 overflow-auto">
       <Confetti trigger={confettiKey} />
-      <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-md w-full text-center">
+      <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 max-w-md w-full text-center">
         {kidPhoto && (
-          <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mx-auto mb-2">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mx-auto mb-2">
             <img src={kidPhoto} alt="" className="w-full h-full object-cover" />
           </div>
         )}
-        <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-2">🎉 {msg}</h1>
-        <div className="text-4xl md:text-5xl mb-2">{stars}</div>
-        <div className="text-2xl font-bold text-orange-600 mb-4">⭐ {score}/{total} ({pct}%)</div>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-pink-600 mb-2">🎉 {msg}</h1>
+        <div className="text-3xl sm:text-4xl md:text-5xl mb-2">{stars}</div>
+        <div className="text-xl sm:text-2xl font-bold text-orange-600 mb-3 sm:mb-4">⭐ {score}/{total} ({pct}%)</div>
         <div className="bg-gray-50 rounded-2xl p-3 mb-4 text-left max-h-48 overflow-auto">
           <h3 className="font-bold text-purple-700 text-sm mb-2">Word Results:</h3>
           {results.map((r, i) => (
@@ -861,10 +861,10 @@ function ResultsScreen({ data, onBack, onPlayAgain }) {
 // ===========================================================
 function HistoryScreen({ history, onBack }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-4 overflow-auto">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-3 sm:p-4 overflow-auto">
       <div className="max-w-lg mx-auto">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-indigo-700">📊 Score History</h1>
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-700">📊 Score History</h1>
           <button onClick={onBack}
             className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-xl font-bold shadow hover:scale-105 active:scale-95 transition-transform text-sm">
             ← Back

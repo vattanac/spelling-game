@@ -199,10 +199,18 @@ describe("Audio Engine", () => {
       expect(utterance.text).toBe("cat");
     });
 
-    it("cancels any previous speech before speaking", async () => {
+    it("cancels previous speech only when already speaking", async () => {
       mockSpeech.getVoices.mockReturnValue([{ lang: "en-US", name: "Samantha" }]);
       const { speakWord } = await freshAudio();
+
+      // When nothing is playing, cancel should NOT be called
       speakWord("DOG");
+      expect(mockSpeech.cancel).not.toHaveBeenCalled();
+      expect(mockSpeech.speak).toHaveBeenCalledTimes(1);
+
+      // When speech is active, cancel SHOULD be called
+      mockSpeech.speaking = true;
+      speakWord("CAT");
       expect(mockSpeech.cancel).toHaveBeenCalled();
     });
 
@@ -230,25 +238,19 @@ describe("Audio Engine", () => {
       expect(utterance.voice).toBe(samantha);
     });
 
-    it("retries with a NEW utterance if speech never starts", async () => {
-      vi.useFakeTimers();
+    it("speaks different words sequentially without dedup", async () => {
       mockSpeech.getVoices.mockReturnValue([{ lang: "en-US", name: "Samantha" }]);
       mockSpeech.speaking = false;
 
       const { speakWord } = await freshAudio();
       speakWord("BIRD");
-
       expect(mockSpeech.speak).toHaveBeenCalledTimes(1);
-      const firstUtterance = mockSpeech.speak.mock.calls[0][0];
 
-      // Advance past the 600ms retry window (onstart was never called)
-      vi.advanceTimersByTime(700);
-
+      // Different word should not be deduped
+      speakWord("FISH");
       expect(mockSpeech.speak).toHaveBeenCalledTimes(2);
       const secondUtterance = mockSpeech.speak.mock.calls[1][0];
-      expect(secondUtterance).not.toBe(firstUtterance);
-
-      vi.useRealTimers();
+      expect(secondUtterance.text).toBe("fish");
     });
 
     it("does NOT retry if speech already started", async () => {
